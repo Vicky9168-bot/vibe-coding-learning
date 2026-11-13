@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fafaf7;
+  --foreground: #1f2430;
+  --card: #ffffff;
+  --border: #e4e2da;
+  --muted: #6b7080;
+  --accent: #ff6b35;
+  --accent-soft: #fff0e8;
+  --accent-foreground: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-foreground: var(--accent-foreground);
+  --font-sans: "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", system-ui,
+    sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #14161c;
+    --foreground: #eceae3;
+    --card: #1d2029;
+    --border: #2d313d;
+    --muted: #9a9fb0;
+    --accent: #ff8a5c;
+    --accent-soft: #2b2018;
+    --accent-foreground: #14161c;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+/* 系統開啟「減少動態效果」時,關閉所有動畫與轉場 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
